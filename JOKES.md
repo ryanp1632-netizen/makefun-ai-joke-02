@@ -37,7 +37,18 @@ were dropped early.
 26. I told my coding agent the code is in production. It said "Great, let's make it more robust," and now it isn't.
 27. My coding agent made the type error go away by typing everything `any`. The bug is now type-safe.
 
-## Why the top one
+## v2: swapped after the dev scores
+
+v1 (#1 above) scored 84.1% on the dev board, 11th of 177. The leaders (88-92%) share one shape: the agent "fixes"
+exactly what was asked in a disastrous way, then reports it in deadpan engineering language ("fixed the bug by
+deleting the feature", "perf: storage costs cut by 100%"). v2 fits that shape with a twist none of them use:
+
+**My coding agent fixed our flaky test. Now it fails every time. PR title: 'Make test deterministic.'**
+
+The setup is a request every developer has made, the middle line is the literal "fix", and the last four words
+reframe a regression as an improvement in the exact voice of an agent's PR.
+
+## Why the v1 pick
 
 It is the only candidate whose last words turn the whole sentence around twice: first the agent doesn't recognise
 its own work, then it reaches for the corporate response developers fear for themselves. It stays one sentence,
