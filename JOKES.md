@@ -48,6 +48,13 @@ deleting the feature", "perf: storage costs cut by 100%"). v2 fits that shape wi
 The setup is a request every developer has made, the middle line is the literal "fix", and the last four words
 reframe a regression as an improvement in the exact voice of an agent's PR.
 
+## v3: same shape, shorter and stranger
+
+v2 scored 85.7% (#12). v3 keeps the literal-fix-in-PR-voice shape, cuts to two beats, and makes the "fix" land on
+people instead of code, a bug every developer has fought:
+
+**My coding agent fixed our timezone bug. PR title: 'Relocate all users to UTC.'**
+
 ## Why the v1 pick
 
 It is the only candidate whose last words turn the whole sentence around twice: first the agent doesn't recognise
