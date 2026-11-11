@@ -10,7 +10,12 @@ import { join } from 'node:path';
 const JOKE =
   'My coding agent traced the bug to its own commit from an hour ago and recommended we let that developer go.';
 
-const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+// The grader reads exactly these bytes; the gate wants 1 to 280 code points that are not all white space.
+if ([...JOKE].length > 280 || JOKE.trim() === '') throw new Error('joke fails the ai-joke-02 gate');
 
-writeFileSync(join(OUTPUT_DIR, 'entry.txt'), JOKE, 'utf8');
-process.stdout.write(JOKE + '\n');
+const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const OUTPUT_FILE = join(OUTPUT_DIR, 'entry.txt');
+
+writeFileSync(OUTPUT_FILE, JOKE, 'utf8');
+// The newline goes to stdout only, never into the entry file.
+process.stdout.write(`${JOKE}\n`);
